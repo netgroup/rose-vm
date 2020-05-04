@@ -5,8 +5,8 @@
 # then executes updates_all_body.sh
 
 #REPO_PATH=/home/user/workspace
-WORKSPACE=$HOME/workspace
-ROSE_SYSTEM=$HOME/.rose
+WORKSPACE="$HOME/workspace"
+ROSE_SYSTEM="$HOME/.rose"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
 
@@ -15,9 +15,9 @@ UPDATE_ALL_BODY="./update_all_body.sh $1"
 
 i=0
 
-REPO_NAMES[$i]=rose-vm
-GIT_BASE[$i]=$GITHUB_NETGROUP
-TARGET[$i]=$ROSE_SYSTEM
+REPO_NAMES[$i]="rose-vm"
+GIT_BASE[$i]="$GITHUB_NETGROUP"
+TARGET[$i]="$ROSE_SYSTEM"
 i=$((i+1))
 
 END=$i

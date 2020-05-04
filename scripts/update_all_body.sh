@@ -3,26 +3,27 @@
 # update_all_body.sh
 
 #REPO_PATH=/home/user/workspace
-WORKSPACE=$HOME/workspace
-ROSE_SYSTEM=$HOME/.rose
+WORKSPACE="$HOME/workspace"
+ROSE_SYSTEM="$HOME/.rose"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
-GITLAB-SRV6-PRIVATE="https://gitlab.com/srv6-private"
+GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
+
 i=0
 
 
 
 #REPO_NAMES[$i]=rose-vm-build
-REPO_NAMES[$i]=rose-tutorial-and-vm
-GIT_BASE[$i]=$GITLAB-SRV6-PRIVATE
-TARGET_NAME[$i]=rose-vm-build
-TARGET_PATH[$i]=$ROSE_SYSTEM
+REPO_NAMES[$i]="rose-tutorial-and-vm"
+GIT_BASE[$i]="$GITLAB_SRV6_PRIVATE"
+TARGET_NAME[$i]="rose-vm-build"
+TARGET_PATH[$i]="$ROSE_SYSTEM"
 i=$((i+1))
 
-REPO_NAMES[$i]=draft-srv6-tutorial
-GIT_BASE[$i]=$GITHUB_NETGROUP
-TARGET_NAME[$i]=draft-srv6-tutorial
-TARGET_PATH[$i]=$WORKSPACE
+REPO_NAMES[$i]="draft-srv6-tutorial"
+GIT_BASE[$i]="$GITHUB_NETGROUP"
+TARGET_NAME[$i]="draft-srv6-tutorial"
+TARGET_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
 END=$i
