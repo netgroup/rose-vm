@@ -15,12 +15,14 @@ i=0
 #REPO_NAMES[$i]=rose-vm-build
 REPO_NAMES[$i]=rose-tutorial-and-vm
 GIT_BASE[$i]=$GITLAB-SRV6-PRIVATE
-TARGET[$i]=$ROSE_SYSTEM
+TARGET_NAME[$i]=rose-vm-build
+TARGET_PATH[$i]=$ROSE_SYSTEM
 i=$((i+1))
 
 REPO_NAMES[$i]=draft-srv6-tutorial
 GIT_BASE[$i]=$GITHUB_NETGROUP
-TARGET[$i]=$WORKSPACE
+TARGET_NAME[$i]=draft-srv6-tutorial
+TARGET_PATH[$i]=$WORKSPACE
 i=$((i+1))
 
 END=$i
@@ -36,7 +38,7 @@ for ((i=0;i<END;i++));
 do
 	REPO_NAME="${REPO_NAMES[$i]}"
         echo "$REPO_NAME"
-	REPO_DIR="${TARGET[$i]}/$REPO_NAME"
+	REPO_DIR="${TARGET_PATH[$i]}/$REPO_NAME"
         echo "$REPO_DIR"
 	if [ -d $REPO_DIR ]; then
 		echo ""
@@ -71,8 +73,8 @@ do
 		echo ""
 		echo "Directory $REPO_DIR is not present"
 		if [ "$1" = "clone_repos" ];then
-			cd "${TARGET[$i]}"
-				printandexec git clone "${GIT_BASE[$i]}/$REPO_NAME.git"
+			cd "${TARGET_PATH[$i]}"
+				printandexec git clone "${GIT_BASE[$i]}/$REPO_NAME.git" "${TARGET_NAME[$i]}"
 		fi	
 
 	fi
