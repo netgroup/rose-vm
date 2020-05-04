@@ -31,9 +31,7 @@ for ((i=0;i<END;i++));
 
 do
 	REPO_NAME="${REPO_NAMES[$i]}"
-        echo "$REPO_NAME"
 	REPO_DIR="${TARGET[$i]}/$REPO_NAME"
-        echo "$REPO_DIR"
 	if [ -d $REPO_DIR ]; then
 		echo ""
   		# It will enter here if $REPO_dir exists.
