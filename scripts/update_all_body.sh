@@ -7,11 +7,14 @@ WORKSPACE=$HOME/workspace
 ROSE_SYSTEM=$HOME/.rose
 
 GITHUB_NETGROUP="https://github.com/netgroup"
-
+GITLAB-SRV6-PRIVATE="https://gitlab.com/srv6-private"
 i=0
 
-REPO_NAMES[$i]=rose-vm-build
-GIT_BASE[$i]=$GITHUB_NETGROUP
+
+
+#REPO_NAMES[$i]=rose-vm-build
+REPO_NAMES[$i]=rose-tutorial-and-vm
+GIT_BASE[$i]=$GITLAB-SRV6-PRIVATE
 TARGET[$i]=$ROSE_SYSTEM
 i=$((i+1))
 
