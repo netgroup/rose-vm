@@ -17,7 +17,8 @@ i=0
 
 REPO_NAMES[$i]="rose-vm"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-TARGET[$i]="$ROSE_SYSTEM"
+TARGET_NAME[$i]="rose-vm-build"
+TARGET_PATH[$i]="$ROSE_SYSTEM"
 i=$((i+1))
 
 END=$i
@@ -31,7 +32,7 @@ for ((i=0;i<END;i++));
 
 do
 	REPO_NAME="${REPO_NAMES[$i]}"
-	REPO_DIR="${TARGET[$i]}/$REPO_NAME"
+	REPO_DIR="${TARGET_PATH[$i]}/$TARGET_NAME"
 	if [ -d $REPO_DIR ]; then
 		echo ""
   		# It will enter here if $REPO_dir exists.
