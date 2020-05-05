@@ -12,10 +12,8 @@ GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
 i=0
 
 
-
-#REPO_NAMES[$i]=rose-vm-build
-REPO_NAMES[$i]="rose-tutorial-and-vm"
-GIT_BASE[$i]="$GITLAB_SRV6_PRIVATE"
+REPO_NAMES[$i]="rose-vm-build"
+GIT_BASE[$i]="$GITHUB_NETGROUP"
 TARGET_NAME[$i]="rose-vm-build"
 TARGET_PATH[$i]="$ROSE_SYSTEM"
 i=$((i+1))
