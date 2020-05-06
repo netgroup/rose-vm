@@ -2,9 +2,16 @@
 
 # update_all_body.sh
 
+sudo su rose
+
 #REPO_PATH=/home/user/workspace
 WORKSPACE="$HOME/workspace"
 ROSE_SYSTEM="$HOME/.rose"
+
+echo $WORKSPACE
+echo $WORKSPACE
+echo $WORKSPACE
+echo $WORKSPACE
 
 GITHUB_NETGROUP="https://github.com/netgroup"
 GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
