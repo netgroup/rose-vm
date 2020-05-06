@@ -4,6 +4,8 @@
 # executes update for rose-vm, but does not clone
 # then executes updates_all_body.sh
 
+sudo -i -u rose bash << EOF
+
 #REPO_PATH=/home/user/workspace
 WORKSPACE="$HOME/workspace"
 ROSE_SYSTEM="$HOME/.rose"
@@ -68,3 +70,5 @@ done
 printandexec $UPDATE_ALL_BODY
 echo ""
 read -r -p "Press enter to exit" response
+
+EOF
