@@ -2,8 +2,6 @@
 
 # update_all_body.sh
 
-sudo -i -u rose bash << EOF
-
 #REPO_PATH=/home/user/workspace
 WORKSPACE="$HOME/workspace"
 ROSE_SYSTEM="$HOME/.rose"
@@ -79,5 +77,3 @@ do
 	fi
 
 done
-
-EOF
