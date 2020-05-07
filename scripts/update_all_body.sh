@@ -24,6 +24,13 @@ TARGET_NAME[$i]="draft-srv6-tutorial"
 TARGET_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
+REPO_NAMES[$i]="srv6-tutorial-controller"
+GIT_BASE[$i]="$GITHUB_NETGROUP"
+TARGET_NAME[$i]="srv6-tutorial-controller"
+TARGET_PATH[$i]="$WORKSPACE"
+i=$((i+1))
+
+
 END=$i
 
 printandexec () {
