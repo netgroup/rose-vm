@@ -10,7 +10,7 @@ ROSE_SYSTEM="$HOME/.rose"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
 
-UPDATE_ALL_BODY="./update_all_body.sh $1"
+UPDATE_ALL_BODY="$WORKSPACE/rose-vm/scripts/update_all_body.sh $1"
 
 
 i=0
