@@ -62,6 +62,7 @@ do
 		    	fi
 			fi
 		fi	
+	fi
 done
 
 #printandexec ./update_all_body.sh
