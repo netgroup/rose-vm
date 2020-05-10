@@ -17,8 +17,8 @@ i=0
 
 REPO_NAMES[$i]="rose-vm"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-TARGET_NAME[$i]="rose-vm-build"
-TARGET_PATH[$i]="$ROSE_SYSTEM"
+TARGET_NAME[$i]="rose-vm"
+TARGET_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
 END=$i
