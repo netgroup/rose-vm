@@ -4,13 +4,15 @@
 # executes update for rose-vm, but does not clone
 # then executes updates_all_body.sh
 
-#REPO_PATH=/home/user/workspace
 WORKSPACE="$HOME/workspace"
 ROSE_SYSTEM="$HOME/.rose"
+ROSE-VM-SCRIPTS="$WORKSPACE/rose-vm/scripts"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
+GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
 
-UPDATE_ALL_BODY="$WORKSPACE/rose-vm/scripts/update_all_body.sh $1"
+UPDATE_ALL_BODY="$ROSE-VM-SCRIPTS/update_all_body.sh"
+GIT_REPOS_LIST="$ROSE-VM-SCRIPTS/git_repos_list.sh"
 
 
 i=0
@@ -66,6 +68,6 @@ do
 done
 
 #printandexec ./update_all_body.sh
-printandexec $UPDATE_ALL_BODY
+printandexec "$UPDATE_ALL_BODY" "$1"
 echo ""
 read -r -p "Press enter to exit" response

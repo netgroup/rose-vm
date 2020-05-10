@@ -2,34 +2,19 @@
 
 # update_all_body.sh
 
-#REPO_PATH=/home/user/workspace
 WORKSPACE="$HOME/workspace"
 ROSE_SYSTEM="$HOME/.rose"
+ROSE-VM-SCRIPTS="$WORKSPACE/rose-vm/scripts"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
 GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
 
+UPDATE_ALL_BODY="$ROSE-VM-SCRIPTS/update_all_body.sh"
+GIT_REPOS_LIST="$ROSE-VM-SCRIPTS/git_repos_list.sh"
+
 i=0
 
-
-REPO_NAMES[$i]="rose-vm-build"
-GIT_BASE[$i]="$GITHUB_NETGROUP"
-LOCAL_NAME[$i]="rose-vm-build"
-LOCAL_PATH[$i]="$ROSE_SYSTEM"
-i=$((i+1))
-
-REPO_NAMES[$i]="draft-srv6-tutorial"
-GIT_BASE[$i]="$GITHUB_NETGROUP"
-LOCAL_NAME[$i]="draft-srv6-tutorial"
-LOCAL_PATH[$i]="$WORKSPACE"
-i=$((i+1))
-
-REPO_NAMES[$i]="srv6-tutorial-controller"
-GIT_BASE[$i]="$GITHUB_NETGROUP"
-LOCAL_NAME[$i]="srv6-tutorial-controller"
-LOCAL_PATH[$i]="$WORKSPACE"
-i=$((i+1))
-
+source "$GIT_REPOS_LIST"
 
 END=$i
 
