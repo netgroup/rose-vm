@@ -13,7 +13,7 @@ GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
 
 UPDATE_ALL_BODY="$ROSE_VM_SCRIPTS/update_all_body.sh"
 GIT_REPOS_LIST="$ROSE_VM_SCRIPTS/git_repos_list.sh"
-
+SETUP_FRR="$ROSE_VM_SCRIPTS/setup_frr.sh"
 
 i=0
 
@@ -70,6 +70,8 @@ done
 #printandexec ./update_all_body.sh
 printandexec "$UPDATE_ALL_BODY" "$1"
 find "$ROSE_VM_SCRIPTS" -type f -exec chmod +x {} \;
+
+printandexec "$SETUP_FRR"
 
 echo ""
 read -r -p "Press enter to exit" response
