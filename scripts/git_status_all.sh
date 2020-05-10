@@ -57,3 +57,6 @@ do
 	fi
 
 done
+
+echo ""
+read -r -p "Press enter to exit" response
