@@ -14,20 +14,20 @@ i=0
 
 REPO_NAMES[$i]="rose-vm-build"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-TARGET_NAME[$i]="rose-vm-build"
-TARGET_PATH[$i]="$ROSE_SYSTEM"
+LOCAL_NAME[$i]="rose-vm-build"
+LOCAL_PATH[$i]="$ROSE_SYSTEM"
 i=$((i+1))
 
 REPO_NAMES[$i]="draft-srv6-tutorial"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-TARGET_NAME[$i]="draft-srv6-tutorial"
-TARGET_PATH[$i]="$WORKSPACE"
+LOCAL_NAME[$i]="draft-srv6-tutorial"
+LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
 REPO_NAMES[$i]="srv6-tutorial-controller"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-TARGET_NAME[$i]="srv6-tutorial-controller"
-TARGET_PATH[$i]="$WORKSPACE"
+LOCAL_NAME[$i]="srv6-tutorial-controller"
+LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
 
@@ -43,7 +43,7 @@ for ((i=0;i<END;i++));
 
 do
 	REPO_NAME="${REPO_NAMES[$i]}"
-	REPO_DIR="${TARGET_PATH[$i]}/${TARGET_NAME[$i]}"
+	REPO_DIR="${LOCAL_PATH[$i]}/${LOCAL_NAME[$i]}"
 	if [ -d $REPO_DIR ]; then
 		echo ""
   		# It will enter here if $REPO_dir exists.
@@ -77,8 +77,8 @@ do
 		echo ""
 		echo "Directory $REPO_DIR is not present"
 		if [ "$1" = "clone_repos" ];then
-			cd "${TARGET_PATH[$i]}"
-				printandexec git clone "${GIT_BASE[$i]}/$REPO_NAME.git" "${TARGET_NAME[$i]}"
+			cd "${LOCAL_PATH[$i]}"
+				printandexec git clone "${GIT_BASE[$i]}/$REPO_NAME.git" "${LOCAL_NAME[$i]}"
 		fi	
 
 	fi
