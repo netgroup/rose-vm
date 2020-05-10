@@ -69,7 +69,7 @@ done
 
 #printandexec ./update_all_body.sh
 printandexec "$UPDATE_ALL_BODY" "$1"
-chmod +x "$ROSE_VM_SCRIPTS/*"
+chmod +x "$ROSE_VM_SCRIPTS/$*"
 
 echo ""
 read -r -p "Press enter to exit" response
