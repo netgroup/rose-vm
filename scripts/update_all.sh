@@ -6,13 +6,13 @@
 
 WORKSPACE="$HOME/workspace"
 ROSE_SYSTEM="$HOME/.rose"
-ROSE-VM-SCRIPTS="$WORKSPACE/rose-vm/scripts"
+ROSE_VM_SCRIPTS="$WORKSPACE/rose-vm/scripts"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
 GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
 
-UPDATE_ALL_BODY="$ROSE-VM-SCRIPTS/update_all_body.sh"
-GIT_REPOS_LIST="$ROSE-VM-SCRIPTS/git_repos_list.sh"
+UPDATE_ALL_BODY="$ROSE_VM_SCRIPTS/update_all_body.sh"
+GIT_REPOS_LIST="$ROSE_VM_SCRIPTS/git_repos_list.sh"
 
 
 i=0
