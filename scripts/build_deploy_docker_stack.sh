@@ -11,11 +11,11 @@ DOCKERIZED_REPO="$WORKSPACE/srv6-pm-dockerized"
 
 cd $FLASK_APP
 
-docker build -t rose-expman:beta . --no-cache
+docker build -t rose-expman:beta .
 
 cd $DASHBOARD_REPO
 
-docker build -t rose-dashboard:beta . --no-cache
+docker build -t rose-dashboard:beta .
 
 cd $DOCKERIZED_REPO
 # init a swarm
