@@ -75,5 +75,9 @@ find "$ROSE_VM_SCRIPTS" -type f -exec chmod +x {} \;
 printandexec "$SETUP_FRR"
 #printandexec "$SETUP_FRR_FROM_COMPILED"
 
+printandexec "$ROSE_VM_SCRIPTS/setup_python_dep.sh"
+printandexec "$ROSE_VM_SCRIPTS/build_proto.sh"
+printandexec "$ROSE_VM_SCRIPTS/build_deploy_docker_stack.sh"
+
 echo ""
 read -r -p "Press enter to exit" response
