@@ -3,28 +3,28 @@
 # Install python3-dev
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python3-dev"
-apt-get install -y python3-dev &&
+sudo apt install -y python3-dev &&
 
 # Install graphviz
 echo -e "\n\n#####################################"
 echo -e "\n-Installing graphviz"
-apt-get install -y graphviz &&
+sudo apt install -y graphviz &&
 
 # Install libgraphviz-dev
 echo -e "\n\n#####################################"
 echo -e "\n-Installing libgraphviz-dev"
-apt-get install -y libgraphviz-dev &&
+sudo apt install -y libgraphviz-dev &&
 
 # Install mininet
 echo -e "\n\n#####################################"
 echo -e "\n-Installing mininet"
-apt-get install -y mininet &&
+sudo apt install -y mininet &&
 pip3 install git+https://github.com/mininet/mininet.git &&
 
 # Install python3-pip
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python3-pip"
-apt install -y python3-pip &&
+sudo apt install -y python3-pip &&
 
 # Install grpcio
 echo -e "\n\n#####################################"
