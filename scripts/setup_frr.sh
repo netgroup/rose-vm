@@ -33,8 +33,11 @@ sudo apt install -y python
 echo -e "\n\n#####################################"
 echo -e "\n-Installing Mininet"
 sudo apt install -y mininet
-sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
-
+if [[ -f "/usr/bin/gnome-terminal" ]]; then
+    echo "/usr/bin/gnome-terminal already there"
+else
+    sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
+fi
 
 FRR_INSTALLED="no"
 if [[ $(/usr/lib/frr/zebra -v) ]]; then
