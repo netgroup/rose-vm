@@ -2,8 +2,9 @@
 
 # setup_frr.sh
 
-WORKSPACE="$HOME/workspace"
-ROSE_SYSTEM="$HOME/.rose"
+HOME_DIR="$HOME"
+WORKSPACE="$HOME_DIR/workspace"
+ROSE_SYSTEM="$HOME_DIR/.rose"
 ROSE_VM_SCRIPTS="$WORKSPACE/rose-vm/scripts"
 
 GITHUB_NETGROUP="https://github.com/netgroup"
@@ -20,7 +21,13 @@ FRRVER="frr-stable"
 #RELEASE=$(lsb_release -s -c)
 RELEASE="bionic"
 
-cd $WORKSPACE
+cd $HOME_DIR
+
+# Install python2
+echo -e "\n\n#####################################"
+echo -e "\n-Installing python2"
+sudo apt install -y python
+
 
 # Install Mininet
 echo -e "\n\n#####################################"
