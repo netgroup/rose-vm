@@ -40,7 +40,7 @@ sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
 echo -e "\n\n#####################################"
 echo -e "\n-Installing FRR"
 
-unzip "$WORKSPACE/rose-vm/compiled/frr-7.3.1-compiled.zip"
+unzip "$WORKSPACE/rose-vm/compiled/frr-frr-7.3.1-compiled.zip"
 
 cd frr-frr-7.3.1
 
