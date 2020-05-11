@@ -25,8 +25,8 @@ cd $WORKSPACE
 # Install Mininet
 echo -e "\n\n#####################################"
 echo -e "\n-Installing Mininet"
-sudo apt install -y Mininet
-ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
+sudo apt install -y mininet
+sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
 
 
 # Install FRR
