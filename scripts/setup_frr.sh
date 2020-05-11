@@ -36,84 +36,103 @@ sudo apt install -y mininet
 sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
 
 
-# Install FRR
-echo -e "\n\n#####################################"
-echo -e "\n-Installing FRR"
 
-# # Install from package
-# # add GPG key
-# wget https://deb.frrouting.org/frr/keys.asc 
-# sudo apt-key add keys.asc
-# rm keys.asc
-# echo deb https://deb.frrouting.org/frr $RELEASE $FRRVER | sudo tee -a /etc/apt/sources.list.d/frr.list
-# # update and install FRR
-# sudo apt update && sudo apt -y install frr frr-pythontools
 
-# Install from source
-wget https://github.com/FRRouting/frr/archive/frr-7.3.1.zip
-unzip frr-7.3.1.zip
-cd frr-frr-7.3.1
-sudo apt install -y dh-autoreconf
-./bootstrap.sh
+FRR_INSTALLED="no"
+if [[ $(/usr/lib/frr/zebra -v) ]]; then
+    FRR_INSTALLED="yes"
+else
+    if [[ -d "$HOME_DIR/frr-frr-7.3.1" ]]; then
+        echo "Found directory $HOME_DIR/frr-frr-7.3.1 (now removing it)"
+        sudo rm -rf "$HOME_DIR/frr-frr-7.3.1"
+    else
+        echo "directory $HOME_DIR/frr-frr-7.3.1 not found"
+    fi
+fi    
 
-sudo groupadd -r -g 92 frr
-sudo groupadd -r -g 85 frrvty
-sudo adduser --system --ingroup frr --home /var/run/frr/ \
-   --gecos "FRR suite" --shell /sbin/nologin frr
-sudo usermod -a -G frrvty frr
+if [ FRR_INSTALLED="no" ]; then
 
-sudo apt install -y \
-git autoconf automake libtool make libreadline-dev texinfo \
-pkg-config libpam0g-dev libjson-c-dev bison flex python3-pytest \
-libc-ares-dev python3-dev libsystemd-dev python-ipaddress python3-sphinx \
-install-info build-essential libsystemd-dev libsnmp-dev perl libcap-dev
+    # Install FRR
+    echo -e "\n\n#####################################"
+    echo -e "\n-Installing FRR"
 
-sudo apt install -y libyang-dev
+    # # Install from package
+    # # add GPG key
+    # wget https://deb.frrouting.org/frr/keys.asc 
+    # sudo apt-key add keys.asc
+    # rm keys.asc
+    # echo deb https://deb.frrouting.org/frr $RELEASE $FRRVER | sudo tee -a /etc/apt/sources.list.d/frr.list
+    # # update and install FRR
+    # sudo apt update && sudo apt -y install frr frr-pythontools
 
-./configure \
-    --prefix=/usr \
-    --includedir=\${prefix}/include \
-    --enable-exampledir=\${prefix}/share/doc/frr/examples \
-    --bindir=\${prefix}/bin \
-    --sbindir=\${prefix}/lib/frr \
-    --libdir=\${prefix}/lib/frr \
-    --libexecdir=\${prefix}/lib/frr \
-    --localstatedir=/var/run/frr \
-    --sysconfdir=/etc/frr \
-    --with-moduledir=\${prefix}/lib/frr/modules \
-    --with-libyang-pluginsdir=\${prefix}/lib/frr/libyang_plugins \
-    --enable-configfile-mask=0640 \
-    --enable-logfile-mask=0640 \
-    --enable-snmp=agentx \
-    --enable-multipath=64 \
-    --enable-user=frr \
-    --enable-group=frr \
-    --enable-vty-group=frrvty \
-    --with-pkg-git-version \
-    --disable-ripd \
-    --disable-ripngd \
-    --disable-ospfd \
-    --disable-ospf6d \
-    --disable-bgpd \
-    --disable-ldpd \
-    --disable-nhrpd \
-    --disable-eigrpd \
-    --disable-babeld \
-    --disable-watchfrr \
-    --disable-pimd \
-    --disable-vrrpd \
-    --disable-pbrd \
-    --disable-bgp-announce \
-    --disable-bgp-vnc \
-    --disable-bgp-bmp \
-    --disable-ospfapi \
-    --disable-ospfclient \
-    --disable-fabricd \
-    --disable-irdp \
-    --enable-shell-access \
-    --with-pkg-extra-version=-FRR_Rose
-make
-sudo make install
+    # Install from source    
+    wget https://github.com/FRRouting/frr/archive/frr-7.3.1.zip
+    unzip frr-7.3.1.zip
+    cd frr-frr-7.3.1
+    sudo apt install -y dh-autoreconf
+    ./bootstrap.sh
 
-cd ..
-rm frr-7.3.1.zip
+    sudo groupadd -r -g 92 frr
+    sudo groupadd -r -g 85 frrvty
+    sudo adduser --system --ingroup frr --home /var/run/frr/ \
+       --gecos "FRR suite" --shell /sbin/nologin frr
+    sudo usermod -a -G frrvty frr
+
+    sudo apt install -y \
+    git autoconf automake libtool make libreadline-dev texinfo \
+    pkg-config libpam0g-dev libjson-c-dev bison flex python3-pytest \
+    libc-ares-dev python3-dev libsystemd-dev python-ipaddress python3-sphinx \
+    install-info build-essential libsystemd-dev libsnmp-dev perl libcap-dev
+
+    sudo apt install -y libyang-dev
+
+    ./configure \
+        --prefix=/usr \
+        --includedir=\${prefix}/include \
+        --enable-exampledir=\${prefix}/share/doc/frr/examples \
+        --bindir=\${prefix}/bin \
+        --sbindir=\${prefix}/lib/frr \
+        --libdir=\${prefix}/lib/frr \
+        --libexecdir=\${prefix}/lib/frr \
+        --localstatedir=/var/run/frr \
+        --sysconfdir=/etc/frr \
+        --with-moduledir=\${prefix}/lib/frr/modules \
+        --with-libyang-pluginsdir=\${prefix}/lib/frr/libyang_plugins \
+        --enable-configfile-mask=0640 \
+        --enable-logfile-mask=0640 \
+        --enable-snmp=agentx \
+        --enable-multipath=64 \
+        --enable-user=frr \
+        --enable-group=frr \
+        --enable-vty-group=frrvty \
+        --with-pkg-git-version \
+        --disable-ripd \
+        --disable-ripngd \
+        --disable-ospfd \
+        --disable-ospf6d \
+        --disable-bgpd \
+        --disable-ldpd \
+        --disable-nhrpd \
+        --disable-eigrpd \
+        --disable-babeld \
+        --disable-watchfrr \
+        --disable-pimd \
+        --disable-vrrpd \
+        --disable-pbrd \
+        --disable-bgp-announce \
+        --disable-bgp-vnc \
+        --disable-bgp-bmp \
+        --disable-ospfapi \
+        --disable-ospfclient \
+        --disable-fabricd \
+        --disable-irdp \
+        --enable-shell-access \
+        --with-pkg-extra-version=-FRR_Rose
+    make
+    sudo make install
+
+    cd ..
+    rm frr-7.3.1.zip
+else
+    echo "FRR is already installed"
+fi
