@@ -21,7 +21,7 @@ FRRVER="frr-stable"
 #RELEASE=$(lsb_release -s -c)
 RELEASE="bionic"
 
-cd $HOME_DIR
+cd $WORKSPACE
 
 # Install python2
 echo -e "\n\n#####################################"
