@@ -36,10 +36,8 @@ sudo apt install -y mininet
 sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
 
 
-
-
 FRR_INSTALLED="no"
-if [ $(/usr/lib/frr/zebra -v) ]; then
+if [[ $(/usr/lib/frr/zebra -v) ]]; then
     FRR_INSTALLED="yes"
 else
     if [[ -d "$HOME_DIR/frr-frr-7.3.1" ]]; then
@@ -50,7 +48,7 @@ else
     fi
 fi    
 
-if [ FRR_INSTALLED="no" ]; then
+if [ FRR_INSTALLED == "no" ]; then
 
     # Install FRR
     echo -e "\n\n#####################################"
