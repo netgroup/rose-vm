@@ -72,8 +72,8 @@ done
 printandexec "$UPDATE_ALL_BODY" "$1"
 find "$ROSE_VM_SCRIPTS" -type f -exec chmod +x {} \;
 
-#printandexec "$SETUP_FRR"
-printandexec "$SETUP_FRR_FROM_COMPILED"
+printandexec "$SETUP_FRR"
+#printandexec "$SETUP_FRR_FROM_COMPILED"
 
 echo ""
 read -r -p "Press enter to exit" response
