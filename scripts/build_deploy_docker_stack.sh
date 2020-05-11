@@ -1,8 +1,7 @@
-#!/bin/bash
 
 # setup_frr.sh
 
-WORKSPACE="$HOME/Workspace"
+WORKSPACE="$HOME/workspace"
 
 FLASK_APP="$WORKSPACE/srv6-pm-flask"
 
