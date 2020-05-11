@@ -107,3 +107,6 @@ sudo apt install -y libyang-dev
     --with-pkg-extra-version=-FRR_Rose
 make
 sudo make install
+
+cd ..
+rm frr-7.3.1.zip
