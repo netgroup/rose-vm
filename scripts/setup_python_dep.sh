@@ -66,6 +66,11 @@ echo -e "\n\n#####################################"
 echo -e "\n-Installing six"
 pip3 install six &&
 
+# Install python-arango
+echo -e "\n\n#####################################"
+echo -e "\n-Installing python-arango"
+pip3 install python-arango
+
 
 # End of setup
 echo -e "\n\n#####################################"
