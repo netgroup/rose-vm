@@ -31,6 +31,8 @@ printandexec () {
 		eval "$@"
 }
 
+# CHECK VM VERSION
+
 for ((i=0;i<END;i++)); 
 
 do
