@@ -76,7 +76,6 @@ printandexec "$SETUP_FRR"
 #printandexec "$SETUP_FRR_FROM_COMPILED"
 
 printandexec "$ROSE_VM_SCRIPTS/setup_python_dep.sh"
-printandexec "sudo $ROSE_VM_SCRIPTS/setup_python_dep.sh"
 printandexec "$ROSE_VM_SCRIPTS/build_proto.sh"
 printandexec "$ROSE_VM_SCRIPTS/build_deploy_docker_stack.sh"
 
