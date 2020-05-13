@@ -19,7 +19,7 @@ LOCAL_NAME[$i]="rose-srv6-control-plane"
 LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
-REPO_NAMES[$i]="srv6-pm-flask"
+REPO_NAMES[$i]="rose-srv6-pm-flask"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
 LOCAL_NAME[$i]="srv6-pm-flask"
 LOCAL_PATH[$i]="$WORKSPACE"
@@ -29,7 +29,7 @@ GIT_BASE[$i]="$GITHUB_NETGROUP"
 LOCAL_NAME[$i]="rose-dashboard"
 LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
-REPO_NAMES[$i]="srv6-pm-dockerized"
+REPO_NAMES[$i]="rose-srv6-pm-dockerized"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
 LOCAL_NAME[$i]="srv6-pm-dockerized"
 LOCAL_PATH[$i]="$WORKSPACE"
