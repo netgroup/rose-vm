@@ -5,6 +5,11 @@ echo -e "\n\n#####################################"
 echo -e "\nVirtual environment for controller (root user)"
 source /root/.controller-venv/bin/activate
 
+# Install wheel
+echo -e "\n\n#####################################"
+echo -e "\n-Installing wheel"
+pip3 install wheel
+
 # Install grpcio
 echo -e "\n\n#####################################"
 echo -e "\n-Installing grpcio"
