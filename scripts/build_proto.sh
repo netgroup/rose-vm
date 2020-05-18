@@ -7,4 +7,4 @@ cd $PROTO_FOLDER
 # Build proto files
 echo -e "\n\n#####################################"
 echo -e "\n-Building proto files"
-bash build.sh
+sudo bash build.sh
