@@ -5,6 +5,11 @@ echo -e "\n\n#####################################"
 echo -e "\nVirtual environment for node manager (root user)"
 source /root/.node-mgr-venv/bin/activate
 
+# Install wheel
+echo -e "\n\n#####################################"
+echo -e "\n-Installing wheel"
+pip3 install wheel &&
+
 # Install grpcio
 echo -e "\n\n#####################################"
 echo -e "\n-Installing grpcio"

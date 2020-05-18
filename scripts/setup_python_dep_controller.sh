@@ -8,7 +8,7 @@ source /root/.controller-venv/bin/activate
 # Install wheel
 echo -e "\n\n#####################################"
 echo -e "\n-Installing wheel"
-pip3 install wheel
+pip3 install wheel &&
 
 # Install grpcio
 echo -e "\n\n#####################################"
@@ -43,4 +43,4 @@ pip3 install six &&
 # Install python-arango
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python-arango"
-pip3 install python-arango
+pip3 install python-arango &&
