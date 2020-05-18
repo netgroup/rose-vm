@@ -18,4 +18,4 @@ sudo apt install -y libgraphviz-dev &&
 # Install mininet
 echo -e "\n\n#####################################"
 echo -e "\n-Installing mininet"
-sudo apt install -y mininet &&
+sudo apt install -y mininet

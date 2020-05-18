@@ -13,4 +13,4 @@ pip3 install wheel &&
 # Install mininet
 echo -e "\n\n#####################################"
 echo -e "\n-Installing mininet"
-pip3 install git+https://github.com/mininet/mininet.git &&
+pip3 install git+https://github.com/mininet/mininet.git

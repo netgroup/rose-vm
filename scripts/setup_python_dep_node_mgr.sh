@@ -23,4 +23,4 @@ pip3 install grpcio-tools &&
 # Install pyroute2
 echo -e "\n\n#####################################"
 echo -e "\n-Installing pyroute2"
-pip3 install pyroute2 &&
+pip3 install pyroute2

@@ -13,4 +13,4 @@ pip3 install wheel &&
 # Install python-arango
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python-arango"
-pip3 install python-arango &&
+pip3 install python-arango
