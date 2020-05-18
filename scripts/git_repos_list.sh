@@ -13,9 +13,9 @@ LOCAL_NAME[$i]="draft-srv6-tutorial"
 LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
-REPO_NAMES[$i]="srv6-tutorial-controller"
+REPO_NAMES[$i]="rose-srv6-control-plane"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-LOCAL_NAME[$i]="srv6-tutorial-controller"
+LOCAL_NAME[$i]="rose-srv6-control-plane"
 LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
