@@ -7,9 +7,9 @@ LOCAL_NAME[$i]="rose-vm-build"
 LOCAL_PATH[$i]="$ROSE_SYSTEM"
 i=$((i+1))
 
-REPO_NAMES[$i]="draft-srv6-tutorial"
+REPO_NAMES[$i]="rose-srv6-tutorial"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
-LOCAL_NAME[$i]="draft-srv6-tutorial"
+LOCAL_NAME[$i]="rose-srv6-tutorial"
 LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
