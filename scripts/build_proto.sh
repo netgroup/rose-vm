@@ -1,5 +1,5 @@
 WORKSPACE="$HOME/workspace"
-SRV6_TUTORIAL_CONTROLLER="$WORKSPACE/srv6-tutorial-controller"
+SRV6_TUTORIAL_CONTROLLER="$WORKSPACE/rose-srv6-control-plane"
 PROTO_FOLDER="$SRV6_TUTORIAL_CONTROLLER/srv6_controller/protos"
 
 cd $PROTO_FOLDER
