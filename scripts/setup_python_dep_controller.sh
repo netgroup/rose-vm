@@ -1,24 +1,14 @@
 #!/bin/bash
 
-# Install python3-dev
+# Virtual environment for controller (root user)
 echo -e "\n\n#####################################"
-echo -e "\n-Installing python3-dev"
-sudo apt install -y python3-dev &&
+echo -e "\nVirtual environment for controller (root user)"
+source /root/.controller-venv/bin/activate
 
-# Install graphviz
+# Install wheel
 echo -e "\n\n#####################################"
-echo -e "\n-Installing graphviz"
-sudo apt install -y graphviz &&
-
-# Install libgraphviz-dev
-echo -e "\n\n#####################################"
-echo -e "\n-Installing libgraphviz-dev"
-sudo apt install -y libgraphviz-dev &&
-
-# Install mininet
-echo -e "\n\n#####################################"
-echo -e "\n-Installing mininet"
-sudo apt install -y mininet &&
+echo -e "\n-Installing wheel"
+pip3 install wheel &&
 
 # Install grpcio
 echo -e "\n\n#####################################"
@@ -35,11 +25,6 @@ echo -e "\n\n#####################################"
 echo -e "\n-Installing networkx"
 pip3 install networkx &&
 
-# Install protobuf
-echo -e "\n\n#####################################"
-echo -e "\n-Installing protobuf"
-pip3 install protobuf &&
-
 # Install pyaml
 echo -e "\n\n#####################################"
 echo -e "\n-Installing pyaml"
@@ -50,22 +35,17 @@ echo -e "\n\n#####################################"
 echo -e "\n-Installing pygraphviz"
 pip3 install pygraphviz &&
 
-# Install pyroute2
-echo -e "\n\n#####################################"
-echo -e "\n-Installing pyroute2"
-pip3 install pyroute2 &&
-
 # Install six
 echo -e "\n\n#####################################"
 echo -e "\n-Installing six"
 pip3 install six &&
 
+# Install python-dotenv
+echo -e "\n\n#####################################"
+echo -e "\n-Installing python-dotenv"
+pip3 install python-dotenv
+
 # Install python-arango
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python-arango"
 pip3 install python-arango
-
-
-# End of setup
-echo -e "\n\n#####################################"
-echo -e "\n-End of setup"
