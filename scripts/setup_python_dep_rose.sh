@@ -20,6 +20,11 @@ echo -e "\n\n#####################################"
 echo -e "\n-Installing grpcio-tools"
 pip3 install grpcio-tools &&
 
+# Install pyyaml
+echo -e "\n\n#####################################"
+echo -e "\n-Installing pyyaml"
+pip3 install pyyaml &&
+
 # Install python-arango
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python-arango"
