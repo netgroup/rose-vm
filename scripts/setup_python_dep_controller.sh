@@ -40,6 +40,11 @@ echo -e "\n\n#####################################"
 echo -e "\n-Installing six"
 pip3 install six &&
 
+# Install python-dotenv
+echo -e "\n\n#####################################"
+echo -e "\n-Installing python-dotenv"
+pip3 install python-dotenv
+
 # Install python-arango
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python-arango"
