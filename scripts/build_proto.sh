@@ -7,4 +7,6 @@ cd $PROTO_FOLDER
 # Build proto files
 echo -e "\n\n#####################################"
 echo -e "\n-Building proto files"
+# activate venv
+source $HOME/.rose-venv/bin/activate
 bash build.sh

@@ -3,7 +3,7 @@
 # Virtual environment for rose
 echo -e "\n\n#####################################"
 echo -e "\nVirtual environment for rose"
-source /home/rose/.rose-venv/bin/activate
+source $HOME/.rose-venv/bin/activate
 
 # Install wheel
 echo -e "\n\n#####################################"
