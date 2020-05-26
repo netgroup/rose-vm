@@ -49,3 +49,8 @@ pip3 install python-dotenv
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python-arango"
 pip3 install python-arango
+
+# Install fire
+echo -e "\n\n#####################################"
+echo -e "\n-Installing fire"
+pip3 install fire
