@@ -19,6 +19,12 @@ LOCAL_NAME[$i]="rose-srv6-control-plane"
 LOCAL_PATH[$i]="$WORKSPACE"
 i=$((i+1))
 
+REPO_NAMES[$i]="rose-srv6-data-plane"
+GIT_BASE[$i]="$GITHUB_NETGROUP"
+LOCAL_NAME[$i]="rose-srv6-data-plane"
+LOCAL_PATH[$i]="$WORKSPACE"
+i=$((i+1))
+
 REPO_NAMES[$i]="rose-srv6-pm-flask"
 GIT_BASE[$i]="$GITHUB_NETGROUP"
 LOCAL_NAME[$i]="rose-srv6-pm-flask"
