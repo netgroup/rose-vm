@@ -75,12 +75,9 @@ find "$ROSE_VM_SCRIPTS" -type f -exec chmod +x {} \;
 printandexec "$SETUP_FRR"
 #printandexec "$SETUP_FRR_FROM_COMPILED"
 
-printandexec "$ROSE_VM_SCRIPTS/setup_python_apt.sh"
-printandexec "$ROSE_VM_SCRIPTS/setup_python_dep_rose.sh"
-printandexec "sudo $ROSE_VM_SCRIPTS/setup_python_dep_mininet.sh"
-printandexec "sudo $ROSE_VM_SCRIPTS/setup_python_dep_controller.sh"
-printandexec "sudo $ROSE_VM_SCRIPTS/setup_python_dep_node_mgr.sh"
-printandexec "$ROSE_VM_SCRIPTS/build_proto.sh"
+printandexec "$ROSE_VM_SCRIPTS/setup_controller.sh"
+printandexec "$ROSE_VM_SCRIPTS/setup_node_mgr.sh"
+printandexec "$ROSE_VM_SCRIPTS/setup_srv6_tutorial.sh"
 printandexec "$ROSE_VM_SCRIPTS/build_deploy_docker_stack.sh"
 
 echo ""
