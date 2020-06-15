@@ -3,7 +3,7 @@
 # setup_srv6_tutorial.sh
 
 echo -e "\n\n#####################################"
-echo -e "\nInstalling SRv6 Tutorial dependencies"
+echo -e "\n-Installing SRv6 Tutorial dependencies"
 
 # Paths
 WORKSPACE="$HOME/workspace"

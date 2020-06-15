@@ -3,7 +3,7 @@
 # setup_controller.sh
 
 echo -e "\n\n#####################################"
-echo -e "\nInstalling controller modules"
+echo -e "\n-Installing controller modules"
 
 # Paths
 WORKSPACE="$HOME/workspace"

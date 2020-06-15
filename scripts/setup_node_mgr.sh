@@ -3,7 +3,7 @@
 # setup_node.sh
 
 echo -e "\n\n#####################################"
-echo -e "\nInstalling node-manager modules"
+echo -e "\n-Installing node-manager modules"
 
 # Paths
 WORKSPACE="$HOME/workspace"
