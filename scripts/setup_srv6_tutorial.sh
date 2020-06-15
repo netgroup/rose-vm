@@ -8,7 +8,7 @@ echo -e "\nInstalling SRv6 Tutorial dependencies"
 # Paths
 WORKSPACE="$HOME/workspace"
 SRV6_TUTORIAL_REPO="$WORKSPACE/rose-srv6-tutorial"
-SRV6_TUTORIAL_VENV_PATH="$HOME/envs/.mininet-venv"
+SRV6_TUTORIAL_VENV_PATH="$HOME/.envs/mininet-venv"
 
 # Activate the SRv6 Tutorial virtual environment
 echo -e "\nActivating virtual environment"

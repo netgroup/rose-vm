@@ -8,7 +8,7 @@ echo -e "\nInstalling controller modules"
 # Paths
 WORKSPACE="$HOME/workspace"
 CONTROL_PLANE_REPO="$WORKSPACE/rose-srv6-control-plane"
-CONTROLLER_VENV_PATH="$HOME/envs/.controller-venv"
+CONTROLLER_VENV_PATH="$HOME/.envs/controller-venv"
 DB_UPDATE_PATH="$CONTROL_PLANE_REPO/db_update"
 PROTOS_PATH="$CONTROL_PLANE_REPO/control_plane/protos"
 CONTROLLER_PATH="$CONTROL_PLANE_REPO/control_plane/controller"
