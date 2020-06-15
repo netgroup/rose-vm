@@ -21,7 +21,7 @@ source $CONTROLLER_VENV_PATH/bin/activate
 
 # Install prerequisites
 echo -e "\nInstalling graphviz and libgraphviz-dev"
-sudo apt-get install graphviz libgraphviz-dev
+sudo apt install -y graphviz libgraphviz-dev
 
 # Install db_update library in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/db_update library"
