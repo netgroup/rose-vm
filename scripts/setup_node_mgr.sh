@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# setup_node.sh
+# setup_node_mgr.sh
 
 echo -e "\n\n#####################################"
 echo -e "\n-Installing node-manager modules"
