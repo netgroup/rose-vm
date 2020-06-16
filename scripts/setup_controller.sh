@@ -23,6 +23,10 @@ source $CONTROLLER_VENV_PATH/bin/activate
 echo -e "\nInstalling graphviz and libgraphviz-dev"
 sudo apt-get install graphviz libgraphviz-dev
 
+# Remove __pycache__, .pyc and .pyo files from the repository folder
+cd $CONTROL_PLANE_REPO
+find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
+
 # Install db_update library in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/db_update library"
 cd $DB_UPDATE_PATH
