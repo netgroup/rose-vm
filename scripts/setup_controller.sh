@@ -24,6 +24,7 @@ echo -e "\nInstalling graphviz and libgraphviz-dev"
 sudo apt-get install graphviz libgraphviz-dev
 
 # Remove __pycache__, .pyc and .pyo files from the repository folder
+echo -e "\nRemoving old __pycache__, .pyc and .pyo files"
 cd $CONTROL_PLANE_REPO
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
 

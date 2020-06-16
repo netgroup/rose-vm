@@ -20,7 +20,10 @@ echo -e "\nActivating virtual environment"
 source $NODE_MGR_VENV_PATH/bin/activate
 
 # Remove __pycache__, .pyc and .pyo files from the repository folder
+echo -e "\nRemoving old __pycache__, .pyc and .pyo files"
 cd $DATA_PLANE_REPO
+find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
+cd $CONTROL_PLANE_REPO
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
 
 # Install prerequisites
