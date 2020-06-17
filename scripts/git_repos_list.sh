@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # list of repository
 # excluding rose-vm
 

@@ -14,6 +14,7 @@ GIT_REPOS_LIST="$ROSE_VM_SCRIPTS/git_repos_list.sh"
 
 i=0
 
+# shellcheck disable=SC1091
 source "$GIT_REPOS_LIST"
 
 END=$i

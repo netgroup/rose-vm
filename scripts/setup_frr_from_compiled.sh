@@ -21,7 +21,7 @@ FRRVER="frr-stable"
 #RELEASE=$(lsb_release -s -c)
 RELEASE="bionic"
 
-cd $WORKSPACE
+cd "$WORKSPACE" || { echo "Failure"; exit 1; }
 
 # Install python2
 echo -e "\n\n#####################################"
@@ -42,7 +42,7 @@ echo -e "\n-Installing FRR"
 
 unzip "$WORKSPACE/rose-vm/compiled/frr-frr-7.3.1-compiled.zip"
 
-cd frr-frr-7.3.1
+cd frr-frr-7.3.1 || { echo "Failure"; exit 1; }
 
 sudo groupadd -r -g 92 frr
 sudo groupadd -r -g 85 frrvty
@@ -52,4 +52,4 @@ sudo usermod -a -G frrvty frr
 
 sudo make install
 
-cd ..
+cd .. || { echo "Failure"; exit 1; }

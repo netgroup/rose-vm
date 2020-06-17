@@ -69,7 +69,7 @@ if [ FRR_INSTALLED == "no" ]; then
     # Install from source    
     wget https://github.com/FRRouting/frr/archive/frr-7.3.1.zip
     unzip frr-7.3.1.zip
-    cd frr-frr-7.3.1
+    cd frr-frr-7.3.1 || { echo "Failure"; exit 1; }
     sudo apt-get install -y dh-autoreconf
     ./bootstrap.sh
 
