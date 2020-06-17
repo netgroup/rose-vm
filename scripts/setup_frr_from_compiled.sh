@@ -26,13 +26,13 @@ cd $WORKSPACE
 # Install python2
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python2"
-sudo apt install -y python
+sudo apt-get install -y python
 
 
 # Install Mininet
 echo -e "\n\n#####################################"
 echo -e "\n-Installing Mininet"
-sudo apt install -y mininet
+sudo apt-get install -y mininet
 sudo ln -s /usr/bin/xfce4-terminal /usr/bin/gnome-terminal
 
 

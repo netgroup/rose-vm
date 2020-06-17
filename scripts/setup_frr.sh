@@ -26,13 +26,13 @@ cd $HOME_DIR
 # Install python2
 echo -e "\n\n#####################################"
 echo -e "\n-Installing python2"
-sudo apt install -y python
+sudo apt-get install -y python
 
 
 # Install Mininet
 echo -e "\n\n#####################################"
 echo -e "\n-Installing Mininet"
-sudo apt install -y mininet
+sudo apt-get install -y mininet
 if [[ -f "/usr/bin/gnome-terminal" ]]; then
     echo "/usr/bin/gnome-terminal already there"
 else
@@ -70,7 +70,7 @@ if [ FRR_INSTALLED == "no" ]; then
     wget https://github.com/FRRouting/frr/archive/frr-7.3.1.zip
     unzip frr-7.3.1.zip
     cd frr-frr-7.3.1
-    sudo apt install -y dh-autoreconf
+    sudo apt-get install -y dh-autoreconf
     ./bootstrap.sh
 
     sudo groupadd -r -g 92 frr
@@ -79,13 +79,13 @@ if [ FRR_INSTALLED == "no" ]; then
        --gecos "FRR suite" --shell /sbin/nologin frr
     sudo usermod -a -G frrvty frr
 
-    sudo apt install -y \
+    sudo apt-get install -y \
     git autoconf automake libtool make libreadline-dev texinfo \
     pkg-config libpam0g-dev libjson-c-dev bison flex python3-pytest \
     libc-ares-dev python3-dev libsystemd-dev python-ipaddress python3-sphinx \
     install-info build-essential libsystemd-dev libsnmp-dev perl libcap-dev
 
-    sudo apt install -y libyang-dev
+    sudo apt-get install -y libyang-dev
 
     ./configure \
         --prefix=/usr \
