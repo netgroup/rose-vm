@@ -36,7 +36,7 @@ for ((i=0;i<END;i++));
 do
 	REPO_NAME="${REPO_NAMES[$i]}"
 	REPO_DIR="${LOCAL_PATH[$i]}/$LOCAL_NAME"
-	if [ -d $REPO_DIR ]; then
+	if [ -d "$REPO_DIR" ]; then
 		echo ""
   		# It will enter here if $REPO_dir exists.
 		printandexec cd $REPO_DIR

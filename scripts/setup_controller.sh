@@ -17,7 +17,7 @@ CONTROLLER_ENV_FILE="$CONTROLLER_PATH/controller/config/controller.env"
 
 # Activate the controller virtual environment
 echo -e "\nActivating virtual environment"
-source $CONTROLLER_VENV_PATH/bin/activate
+source "$CONTROLLER_VENV_PATH"/bin/activate
 
 # Install prerequisites
 echo -e "\nInstalling graphviz and libgraphviz-dev"
@@ -25,22 +25,22 @@ sudo apt-get install -y graphviz libgraphviz-dev
 
 # Remove __pycache__, .pyc and .pyo files from the repository folder
 echo -e "\nRemoving old __pycache__, .pyc and .pyo files"
-cd $CONTROL_PLANE_REPO
+cd "$CONTROL_PLANE_REPO" || { echo "Failure"; exit 1; }
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
 
 # Install db_update library in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/db_update library"
-cd $DB_UPDATE_PATH
+cd "$DB_UPDATE_PATH" || { echo "Failure"; exit 1; }
 python setup.py develop
 
 # Install protobuf modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/protos modules"
-cd $PROTOS_PATH
+cd "$PROTOS_PATH" || { echo "Failure"; exit 1; }
 python setup.py develop
 
 # Install controller modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/controller modules"
-cd $CONTROLLER_PATH
+cd "$CONTROLLER_PATH" || { echo "Failure"; exit 1; }
 python setup.py develop
 
 # Deactivate the controller virtual envrironment
@@ -52,11 +52,11 @@ echo -e "\nCreating starter script"
 if [ -f "$CONTROLLER_STARTER_SH" ]; then
     echo -e "\n$CONTROLLER_STARTER_SH already exists. Skipping."
 else 
-    echo -e "#!/usr/bin/bash\n\n" > $CONTROLLER_STARTER_SH
-    echo -e "# Activate the controller virtual environment" >> $CONTROLLER_STARTER_SH
-    echo -e "source $CONTROLLER_VENV_PATH/bin/activate\n" >> $CONTROLLER_STARTER_SH
-    echo -e "# Start the controller" >> $CONTROLLER_STARTER_SH
-    echo -e "controller --env-file $CONTROLLER_ENV_FILE" >> $CONTROLLER_STARTER_SH
+    echo -e "#!/usr/bin/bash\n\n" > "$CONTROLLER_STARTER_SH"
+    echo -e "# Activate the controller virtual environment" >> "$CONTROLLER_STARTER_SH"
+    echo -e "source $CONTROLLER_VENV_PATH/bin/activate\n" >> "$CONTROLLER_STARTER_SH"
+    echo -e "# Start the controller" >> "$CONTROLLER_STARTER_SH"
+    echo -e "controller --env-file $CONTROLLER_ENV_FILE" >> "$CONTROLLER_STARTER_SH"
 fi
 
 # End of setup
