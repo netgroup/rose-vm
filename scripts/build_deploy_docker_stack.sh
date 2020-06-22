@@ -22,6 +22,8 @@ case "$(docker info --format '{{.Swarm.LocalNodeState}}')" in
 esac
 
 echo "Deploy rose_stack"
+docker pull docker.pkg.github.com/netgroup/rose-srv6-pm-flask/rose-expman:latest
+docker pull docker.pkg.github.com/netgroup/rose-dashboard/rose-dashboard:latest
 docker stack rm rose_stack
 sleep 10
 docker stack deploy --compose-file docker-compose.yml  -c docker-compose.roseexpmanager.yml  -c docker-compose.arangodb.yml rose_stack
