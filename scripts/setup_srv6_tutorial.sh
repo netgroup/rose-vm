@@ -25,7 +25,7 @@ deactivate
 
 # Create starter script for 3routers topology, if it does not exist
 echo -e "\nCreating starter script for 3routers topology"
-TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets/3routers/starter.sh"
+TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets-unmantained/3routers/starter.sh"
 if [ -f "$TOPO_STARTER_SH" ]; then
     echo -e "\n$TOPO_STARTER_SH already exists. Skipping."
 else 
@@ -38,7 +38,7 @@ fi
 
 # Create starter script for 8routers topology, if it does not exist
 echo -e "\nCreating starter script for 8routers topology"
-TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets/8routers/starter.sh"
+TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets-unmantained/8routers/starter.sh"
 if [ -f "$TOPO_STARTER_SH" ]; then
     echo -e "\n$TOPO_STARTER_SH already exists. Skipping."
 else 
@@ -77,7 +77,7 @@ fi
 
 # Create starter script for 8r-1c-out-band-isis topology, if it does not exist
 echo -e "\nCreating starter script for 8r-1c-out-band-isis topology"
-TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets/8r-1c-out-band-isis/starter.sh"
+TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets-unmantained/8r-1c-out-band-isis/starter.sh"
 if [ -f "$TOPO_STARTER_SH" ]; then
     echo -e "\n$TOPO_STARTER_SH already exists. Skipping."
 else 
@@ -90,7 +90,7 @@ fi
 
 # Create starter script for 8r-1c-srv6-pm topology, if it does not exist
 echo -e "\nCreating starter script for 8r-1c-srv6-pm topology"
-TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets/8r-1c-srv6-pm/starter.sh"
+TOPO_STARTER_SH="$SRV6_TUTORIAL_REPO/nets-in-progress/8r-1c-srv6-pm/starter.sh"
 if [ -f "$TOPO_STARTER_SH" ]; then
     echo -e "\n$TOPO_STARTER_SH already exists. Skipping."
 else 
