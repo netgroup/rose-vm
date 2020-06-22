@@ -2,19 +2,7 @@
 
 WORKSPACE="$HOME/workspace"
 
-FLASK_APP="$WORKSPACE/rose-srv6-pm-flask"
-
-DASHBOARD_REPO="$WORKSPACE/rose-dashboard"
-
 DOCKERIZED_REPO="$WORKSPACE/rose-srv6-pm-dockerized"
-
-cd "$FLASK_APP" || { echo "Failure"; exit 1; }
-
-docker build -t rose-expman:beta .
-
-cd "$DASHBOARD_REPO" || { echo "Failure"; exit 1; }
-
-docker build -t rose-dashboard:beta .
 
 cd "$DOCKERIZED_REPO" || { echo "Failure"; exit 1; }
 # init a swarm
@@ -34,6 +22,8 @@ case "$(docker info --format '{{.Swarm.LocalNodeState}}')" in
 esac
 
 echo "Deploy rose_stack"
+docker pull docker.pkg.github.com/netgroup/rose-srv6-pm-flask/rose-expman:latest
+docker pull docker.pkg.github.com/netgroup/rose-dashboard/rose-dashboard:latest
 docker stack rm rose_stack
 sleep 10
 docker stack deploy --compose-file docker-compose.yml  -c docker-compose.roseexpmanager.yml  -c docker-compose.arangodb.yml rose_stack
