@@ -1,5 +1,4 @@
 #!/bin/bash
-# shellcheck disable=SC2034
 
 # git_status_all.sh
 
