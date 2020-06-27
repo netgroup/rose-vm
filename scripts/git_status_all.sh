@@ -51,5 +51,5 @@ done
 
 echo ""
 read -r -p "Press enter to exit" response
-echo $response
+echo "$response"
 
