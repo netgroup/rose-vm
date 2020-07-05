@@ -21,24 +21,39 @@ source "$NODE_MGR_VENV_PATH"/bin/activate
 
 # Remove __pycache__, .pyc and .pyo files from the repository folder
 echo -e "\nRemoving old __pycache__, .pyc and .pyo files"
-cd "$DATA_PLANE_REPO" || { echo "Failure"; exit 1; }
+cd "$DATA_PLANE_REPO" || {
+    echo "Failure"
+    exit 1
+}
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
-cd "$CONTROL_PLANE_REPO" || { echo "Failure"; exit 1; }
+cd "$CONTROL_PLANE_REPO" || {
+    echo "Failure"
+    exit 1
+}
 find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
 
 # Install prerequisites
 echo -e "\nInstalling rose-srv6-data-plane modules"
-cd "$DATA_PLANE_REPO" || { echo "Failure"; exit 1; }
+cd "$DATA_PLANE_REPO" || {
+    echo "Failure"
+    exit 1
+}
 python setup.py develop
 
 # Install protobuf modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/protos modules"
-cd "$PROTOS_PATH" || { echo "Failure"; exit 1; }
+cd "$PROTOS_PATH" || {
+    echo "Failure"
+    exit 1
+}
 python setup.py develop
 
 # Install node-manager modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/node-manager modules"
-cd "$NODE_MGR_PATH" || { echo "Failure"; exit 1; }
+cd "$NODE_MGR_PATH" || {
+    echo "Failure"
+    exit 1
+}
 python setup.py develop
 
 # Deactivate the node-manager virtual envrironment
@@ -49,12 +64,14 @@ deactivate
 echo -e "\nCreating starter script"
 if [ -f "$NODE_MGR_STARTER_SH" ]; then
     echo -e "\n$NODE_MGR_STARTER_SH already exists. Skipping."
-else 
-    echo -e "#!/usr/bin/bash\n\n" > "$NODE_MGR_STARTER_SH"
-    echo -e "# Activate the node-manager virtual environment" >> "$NODE_MGR_STARTER_SH"
-    echo -e "source $NODE_MGR_VENV_PATH/bin/activate\n" >> "$NODE_MGR_STARTER_SH"
-    echo -e "# Start the node-manager" >> "$NODE_MGR_STARTER_SH"
-    echo -e "node_manager --env-file $NODE_MGR_ENV_FILE" >> "$NODE_MGR_STARTER_SH"
+else
+    {
+        echo -e "#!/usr/bin/bash\n\n" "$NODE_MGR_STARTER_SH"
+        echo -e "# Activate the node-manager virtual environment" "$NODE_MGR_STARTER_SH"
+        echo -e "source $NODE_MGR_VENV_PATH/bin/activate\n" "$NODE_MGR_STARTER_SH"
+        echo -e "# Start the node-manager" "$NODE_MGR_STARTER_SH"
+        echo -e "node_manager --env-file $NODE_MGR_ENV_FILE" "$NODE_MGR_STARTER_SH"
+    }
 fi
 
 # End of setup
