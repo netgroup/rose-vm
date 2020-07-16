@@ -66,11 +66,11 @@ if [ -f "$NODE_MGR_STARTER_SH" ]; then
     echo -e "\n$NODE_MGR_STARTER_SH already exists. Skipping."
 else
     {
-        echo -e "#!/usr/bin/bash\n\n" "$NODE_MGR_STARTER_SH"
-        echo -e "# Activate the node-manager virtual environment" "$NODE_MGR_STARTER_SH"
-        echo -e "source $NODE_MGR_VENV_PATH/bin/activate\n" "$NODE_MGR_STARTER_SH"
-        echo -e "# Start the node-manager" "$NODE_MGR_STARTER_SH"
-        echo -e "node_manager --env-file $NODE_MGR_ENV_FILE" "$NODE_MGR_STARTER_SH"
+        echo -e "#!/usr/bin/bash\n\n" > "$NODE_MGR_STARTER_SH"
+        echo -e "# Activate the node-manager virtual environment" >> "$NODE_MGR_STARTER_SH"
+        echo -e "source $NODE_MGR_VENV_PATH/bin/activate\n" >> "$NODE_MGR_STARTER_SH"
+        echo -e "# Start the node-manager" >> "$NODE_MGR_STARTER_SH"
+        echo -e "node_manager --env-file $NODE_MGR_ENV_FILE" >> "$NODE_MGR_STARTER_SH"
     }
 fi
 
