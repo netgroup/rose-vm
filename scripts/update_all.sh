@@ -75,6 +75,7 @@ find "$ROSE_VM_SCRIPTS" -type f -exec chmod +x {} \;
 printandexec "$SETUP_FRR"
 #printandexec "$SETUP_FRR_FROM_COMPILED"
 
+printandexec "$ROSE_VM_SCRIPTS/setup_srv6_apps.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_controller.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_node_mgr.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_srv6_tutorial.sh"
