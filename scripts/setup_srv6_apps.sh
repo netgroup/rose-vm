@@ -12,7 +12,6 @@ SRV6_APPS_VENV_PATH="$HOME/.envs/srv6-apps-venv"
 PROTOS_PATH="$CONTROL_PLANE_REPO/control_plane/nb_protos"
 SRV6_APPS_PATH="$CONTROL_PLANE_REPO/control_plane/apps"
 CLI_STARTER_SH="$SRV6_APPS_PATH/apps/cli/starter.sh"
-CLI_ENV_FILE="$SRV6_APPS_PATH/apps/cli/config/cli.env"
 
 # Activate the srv6 apps virtual environment
 echo -e "\nActivating virtual environment"
@@ -46,7 +45,7 @@ else
     echo -e "# Activate the SRv6 Apps virtual environment" >> "$CLI_STARTER_SH"
     echo -e "source $SRV6_APPS_VENV_PATH/bin/activate\n" >> "$CLI_STARTER_SH"
     echo -e "# Start the CLI" >> "$CLI_STARTER_SH"
-    echo -e "python cli.py --env-file $CLI_ENV_FILE" >> "$CLI_STARTER_SH"
+    echo -e "python cli.py" >> "$CLI_STARTER_SH"
 fi
 
 # End of setup
