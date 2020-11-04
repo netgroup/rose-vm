@@ -11,6 +11,7 @@ CONTROL_PLANE_REPO="$WORKSPACE/rose-srv6-control-plane"
 CONTROLLER_VENV_PATH="$HOME/.envs/controller-venv"
 DB_UPDATE_PATH="$CONTROL_PLANE_REPO/db_update"
 PROTOS_PATH="$CONTROL_PLANE_REPO/control_plane/protos"
+NB_PROTOS_PATH="$CONTROL_PLANE_REPO/control_plane/nb_protos"
 CONTROLLER_PATH="$CONTROL_PLANE_REPO/control_plane/controller"
 CONTROLLER_STARTER_SH="$CONTROLLER_PATH/starter.sh"
 CONTROLLER_ENV_FILE="$CONTROLLER_PATH/controller/config/controller.env"
@@ -36,6 +37,11 @@ python setup.py develop
 # Install protobuf modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/protos modules"
 cd "$PROTOS_PATH" || { echo "Failure"; exit 1; }
+python setup.py develop
+
+# Install nb protobuf modules in develop mode
+echo -e "\nInstalling rose-srv6-control-plane/control_plane/nb_protos modules"
+cd "$NB_PROTOS_PATH" || { echo "Failure"; exit 1; }
 python setup.py develop
 
 # Install controller modules in develop mode
