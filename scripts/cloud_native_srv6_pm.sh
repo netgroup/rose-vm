@@ -12,8 +12,12 @@ printandexec () {
 }
 
 
+echo -e "\n\n#####################################"
+echo -e "\n-Starting docker service"
 sudo systemctl start docker
 
+echo -e "\n\n#####################################"
+echo -e "\n-Deploying docker stack"
 printandexec "$ROSE_VM_SCRIPTS/build_deploy_docker_stack.sh"
 
 echo ""
