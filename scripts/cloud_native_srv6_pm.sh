@@ -4,7 +4,6 @@
 # start docker infrastructure for Cloud Native SRv6-PM
 
 WORKSPACE="$HOME/workspace"
-ROSE_SYSTEM="$HOME/.rose"
 ROSE_VM_SCRIPTS="$WORKSPACE/rose-vm/scripts"
 
 printandexec () {
