@@ -79,7 +79,7 @@ printandexec "$ROSE_VM_SCRIPTS/setup_srv6_apps.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_controller.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_node_mgr.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_srv6_tutorial.sh"
-printandexec "$ROSE_VM_SCRIPTS/build_deploy_docker_stack.sh"
+#printandexec "$ROSE_VM_SCRIPTS/build_deploy_docker_stack.sh"
 
 echo ""
 read -r -p "Press enter to exit" response
