@@ -14,7 +14,6 @@ GITLAB_SRV6_PRIVATE="https://gitlab.com/srv6-private"
 UPDATE_ALL_BODY="$ROSE_VM_SCRIPTS/update_all_body.sh"
 GIT_REPOS_LIST="$ROSE_VM_SCRIPTS/git_repos_list.sh"
 SETUP_FRR="$ROSE_VM_SCRIPTS/setup_frr.sh"
-SETUP_FRR_FROM_COMPILED="$ROSE_VM_SCRIPTS/setup_frr_from_compiled.sh"
 
 i=0
 
@@ -39,7 +38,7 @@ do
 	if [ -d "$REPO_DIR" ]; then
 		echo ""
   		# It will enter here if $REPO_dir exists.
-		printandexec cd $REPO_DIR
+		printandexec cd "$REPO_DIR"
 
 		if [ "$(git status | grep 'nothing to commit')" ]; then
 			#echo "nothing to commit, working directory clean"
@@ -73,7 +72,6 @@ printandexec "$UPDATE_ALL_BODY" "$1"
 find "$ROSE_VM_SCRIPTS" -type f -exec chmod +x {} \;
 
 printandexec "$SETUP_FRR"
-#printandexec "$SETUP_FRR_FROM_COMPILED"
 
 printandexec "$ROSE_VM_SCRIPTS/setup_srv6_apps.sh"
 printandexec "$ROSE_VM_SCRIPTS/setup_controller.sh"
