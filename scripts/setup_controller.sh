@@ -19,6 +19,7 @@ CONTROLLER_ENV_FILE="$CONTROLLER_PATH/controller/config/controller.env"
 # Activate the controller virtual environment
 echo -e "\nActivating virtual environment"
 source "$CONTROLLER_VENV_PATH"/bin/activate
+source "$HOME/.envs/controller-venv/bin/activate"
 
 # Install prerequisites
 echo -e "\nInstalling graphviz and libgraphviz-dev"
@@ -32,22 +33,33 @@ find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs sudo rm -rf
 # Install db_update library in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/db_update library"
 cd "$DB_UPDATE_PATH" || { echo "Failure"; exit 1; }
-python setup.py develop
+#python setup.py develop
+pip install -e .
+
+
+
 
 # Install protobuf modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/protos modules"
 cd "$PROTOS_PATH" || { echo "Failure"; exit 1; }
-python setup.py develop
+#python setup.py develop
+pip install -e .
+
+
 
 # Install nb protobuf modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/nb_protos modules"
 cd "$NB_PROTOS_PATH" || { echo "Failure"; exit 1; }
-python setup.py develop
+#python setup.py develop
+pip install -e .
+
 
 # Install controller modules in develop mode
 echo -e "\nInstalling rose-srv6-control-plane/control_plane/controller modules"
 cd "$CONTROLLER_PATH" || { echo "Failure"; exit 1; }
-python setup.py develop
+#python setup.py develop
+pip install -e .
+
 
 # Deactivate the controller virtual envrironment
 echo -e "\nDeactivating virtual environment"
