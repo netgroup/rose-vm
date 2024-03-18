@@ -19,7 +19,6 @@ CONTROLLER_ENV_FILE="$CONTROLLER_PATH/controller/config/controller.env"
 # Activate the controller virtual environment
 echo -e "\nActivating virtual environment"
 source "$CONTROLLER_VENV_PATH"/bin/activate
-source "$HOME/.envs/controller-venv/bin/activate"
 
 # Install prerequisites
 echo -e "\nInstalling graphviz and libgraphviz-dev"
